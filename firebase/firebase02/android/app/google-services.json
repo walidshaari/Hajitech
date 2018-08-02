@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "251484571841",
+    "firebase_url": "https://labaas-84cb7.firebaseio.com",
+    "project_id": "labaas-84cb7",
+    "storage_bucket": "labaas-84cb7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251484571841:android:331e57524d453a95",
+        "android_client_info": {
+          "package_name": "tech.haji.labaas.firebase01"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "251484571841-fipvnq3metr9jcu10hojsgjdndco2507.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tech.haji.labaas.firebase01",
+            "certificate_hash": "4cb6a4e60fff92bcb0c4d660c941509c270eda23"
+          }
+        },
+        {
+          "client_id": "251484571841-3k306p9f7r3a9vh0kt8qc87uckko6q3k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzwCUkM_zq62ZahkdqJ2WnhMCIYxP544Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "251484571841-3k306p9f7r3a9vh0kt8qc87uckko6q3k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
