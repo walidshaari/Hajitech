@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
         // counter didn't reset back to zero; the application is not restarted.
         primarySwatch: Colors.deepPurple
       ),
-      home: new MyHomePage(title: 'LaBaas ...'),
+      home: new MyHomePage(title: 'Hajj Hackathon MVP: Team Arafat'),
     );
   }
 }
@@ -119,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             new Text(
-              'You have pushed the button this many times:',
+              'You have notified the medics this many times:',
             ),
             new Text(
               '$_counter',
