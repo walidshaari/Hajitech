@@ -1,6 +1,6 @@
 #Hajitech
 
-![HajiTech Logo](/images/HajiTech.png)
+![HajiTech Logo](./images/logo-300.png)
 
 Core data/api services to build Hajj focuses technical solutions
 
