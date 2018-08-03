@@ -113,3 +113,5 @@ It is challenging to break the currently established silos that govern most of H
 *  Enhance the user interactivity, due to non-Arabic language support, we have tried using Google Assistant actions using the English language to request medical assistance. We would like to extend this to the top 10 most used languages in Hajj and extend the use cases and interactions to provide hand free interactive manipulation of such apps when needed.
 
 * We started with the concept of trying to be easy to use language agnostic app, we would like to export more ideas in that regard.
+
+![heart](./images/heart.jpeg)
