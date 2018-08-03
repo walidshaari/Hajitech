@@ -26,7 +26,6 @@
         <activity android:name=".HomeScreen" />
         <activity android:name=".MoreDetailsActivity" />
         <activity android:name=".RequestSending" />
-        <activity android:name=".testFireStore"></activity>
     </application>
 
 </manifest>

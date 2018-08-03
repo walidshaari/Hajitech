@@ -17,12 +17,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -44,6 +46,7 @@ public class HomeScreen extends FragmentActivity implements OnMapReadyCallback{
     int COUNT_THRESHOLD = 10;
     Location loc1;
     FirebaseFirestore firestore;
+    MarkerOptions marker;
     private Double currentUserLatitude, currentUserLongitude;
 
     List<Location> closeUsersLocations = new ArrayList<>();
@@ -61,7 +64,6 @@ public class HomeScreen extends FragmentActivity implements OnMapReadyCallback{
 
         loc1 = new Location("");
 
-
         helpImageView = findViewById(R.id.help_imageView);
         layoutHide = findViewById(R.id.layout_tohide);
         layoutShow = findViewById(R.id.layout_toShow);
@@ -69,7 +71,7 @@ public class HomeScreen extends FragmentActivity implements OnMapReadyCallback{
         layoutShow.setVisibility(View.GONE);
 
 
-        loadUsersLocation();
+
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -100,19 +102,33 @@ public class HomeScreen extends FragmentActivity implements OnMapReadyCallback{
                     String result = addresses.get(0).getLocality()+":";
                     result += addresses.get(0).getCountryName();
                     LatLng latLng = new LatLng(latitude, longitude);
+                    loadUsersLocation();
+                    marker  = new MarkerOptions().position(latLng);
                     mMap.clear();
-                    mMap.addMarker(new MarkerOptions().position(latLng).title(result));
+                    mMap.addMarker(marker);
                     mMap.setMaxZoomPreference(20);
                     mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12.0f));
 
+                    LatLngBounds.Builder builder = new LatLngBounds.Builder();
+
+
+                    Log.i("xxx Size",""+closeUsersLocations.size());
                     for(int i = 0 ; i < closeUsersLocations.size() ; i++) {
+                        builder.include(marker.getPosition());
                         LatLng latLng1 = new LatLng(closeUsersLocations.get(i)
                                 .getLatitude(), closeUsersLocations.get(i).getLongitude());
                         mMap.addMarker(new MarkerOptions().position(latLng1).title("Cool"));
                     }
 
+                    if (closeUsersLocations.size() > 0) {
+                        LatLngBounds bounds = builder.build();
 
+                        int padding = 0; // offset from edges of the map in pixels
+                        CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
 
+                        mMap.moveCamera(cu);
+
+                    }
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -154,6 +170,7 @@ public class HomeScreen extends FragmentActivity implements OnMapReadyCallback{
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+
     }
 
     public void requestHelp(View view){
@@ -175,11 +192,11 @@ public class HomeScreen extends FragmentActivity implements OnMapReadyCallback{
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        closeUsersLocations.clear();
+                        //closeUsersLocations.clear();
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
 
-                                //Log.d("xxx", document.getId() + " => " + document.getData().get("loc"));
+                                Log.d("xxx", document.getId() + " => " + document.getData().get("loc"));
                                 Map<String,Object> map = (HashMap) document.getData().get("loc");
                                 Double latitude = (Double) map.get("_latitude");
                                 Double longitude = (Double) map.get("_longitude");

@@ -71,7 +71,6 @@ public class MoreDetailsActivity extends AppCompatActivity implements View.OnCli
         }
         if(v == imageView5){
             imageView5.clearColorFilter();
-            startActivity(new Intent(getApplicationContext(),  testFireStore.class));
         }
         if(v == cancelButton){
             progressDialog.setMessage("Cancelling request ...");

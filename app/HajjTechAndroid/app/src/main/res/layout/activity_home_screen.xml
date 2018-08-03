@@ -26,7 +26,6 @@
                 tools:context=".MapsActivity" />
 
 
-
             <ImageView
                 android:id="@+id/help_imageView"
                 android:layout_width="150dp"
@@ -95,17 +94,18 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:baselineAligned="false">
-                <TextView
-                    android:drawableLeft="@drawable/ic_volunteer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_margin="5dp"
-                    android:textSize="15sp"
-                    android:gravity="left"
-                    android:text="A volunteer is coming \nDistance: 10 meters\nEstimate time: 10 minutes " />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
+                android:drawableLeft="@drawable/ic_volunteer"
+                android:gravity="left"
+                android:text="A volunteer is coming \nDistance: 10 meters\nEstimate time: 10 minutes "
+                android:textSize="15sp" />
         </LinearLayout>
 
 
-</LinearLayout>
-    </FrameLayout>
+    </LinearLayout>
+</FrameLayout>
