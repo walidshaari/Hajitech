@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TestSMS</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_phone">Phone Number</string>
+    <string name="action_sign_in">Send SMS</string>
+    <string name="error_invalid_phone">Phone number has to be 10 digits</string>
+    <string name="error_field_required">This field is required</string>
+</resources>
