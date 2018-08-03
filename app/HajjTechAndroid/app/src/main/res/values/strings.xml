@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HajjTechAndroid</string>
+    <string name="mapApiKey">AIzaSyDKD7d6a1NbAFDu41vb0aez1cJTeDQVze8</string>
+    <string name="service_not_available">The background geocoding service is not available due to a network error or IO exception.</string>
+    <string name="invalid_lat_long_used">The latitude and/or longitude values that are provided in the Location object are invalid.</string>
+    <string name="no_address_found">The geocoder can\'t find an address for the given latitude/longitude.</string>
+</resources>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+    <!-- phone number -->
+
+    <TextView
+        android:id="@+id/signin_textView"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="Sign in"
+        android:textSize="20sp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_vertical|center_horizontal"
+        android:padding="10dp"
+        android:layout_marginBottom="20dp"
+        />
+
+        <EditText
+            android:id="@+id/phoneNumber_editText"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:drawableLeft="@drawable/ic_phone"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:hint="Phone number"
+            android:inputType="phone"
+            android:textColorHighlight="@color/colorAccent"
+            android:textColorLink="#21D0C3"
+            android:textSize="20sp" />
+
+
+
+
+            <Button
+                android:id="@+id/sendCode_button"
+                android:theme="@style/AppTheme.Button"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical|center_horizontal"
+                android:onClick="sendCode"
+                android:text="send code" />
+                <!--
+            <Button
+                android:id="@+id/resendCode_button"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:text="resend"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:onClick="resendCode"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical|center_horizontal"
+                android:padding="10dp"/> -->
+
+
+        <LinearLayout
+
+            android:id="@+id/verifycode_layout"
+            android:layout_marginTop="30dp"
+            android:layout_width="300dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            >
+
+            <EditText
+                android:id="@+id/verifyCode_editText"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical|center_horizontal"
+                android:hint="Enter code here "
+                android:inputType="textNoSuggestions"
+                android:textColorHighlight="@color/colorAccent"
+                android:textColorLink="@color/colorAccent"
+                android:textSize="20sp" />
+            <Button
+                android:id="@+id/verifyCode_button"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="Verify code"
+                android:onClick="verifyCode"
+                android:theme="@style/AppTheme.Button"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="20sp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/NoSMS_textView"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="Have not recieved an SMS? click here"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_vertical|center_horizontal"
+        android:padding="10dp"
+        android:onClick="resendCode"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        />
+
+    <!--SEND CODE BUTTON  onClick
+    RESEND CODE BUTTON onClick
+
+    ENTER CODE EDITTEXT
+
+    VERIFY CODE  onClick
+
+    SIGN OUT onClick-->
+</RelativeLayout>
+    </FrameLayout>
+
