@@ -6,10 +6,110 @@ Core data/api services to build Hajj focuses technical solutions
 
 ## Inspiration
 
-**  وَمَنْ أَحْيَاهَا فَكَأَنَّمَا أَحْيَا النَّاسَ جَمِيعاً **
-**"And whoever saves one; it is as if he had saved mankind entirely", Surat Al-Mā'idah, verse 32.**
+----
 
-**  من كان في حاجة أخيه كان الله في حاجته  **
-** If anyone fulfills his brother's needs, Allah will fulfill his needs **
+**وَمَنْ أَحْيَاهَا فَكَأَنَّمَا أَحْيَا النَّاسَ جَمِيعاً**
 
-At first, we thought an app that helps save lives is the noblest. We knew we can contribute in saving lives by ensuring the fastest response of medical staff and volunteers (doctors, nurses, certified CPR/first aid volunteers)  to reach people in need. However, we soon realized that almost all of the Hajj technical problems can be solved more easily by exploiting the common factor: data assoictaed with both space, and time _SpatioTemporal data_. 
+_"And whoever saves one; it is as if he had saved mankind entirely", Quran, Surat Al-Mā'idah, verse 32_
+
+**من كان في حاجة أخيه كان الله في حاجته**
+
+_If anyone fulfills others' needs, Allah will fulfill his needs Prophet Mohammed PBUH_
+
+At first, we thought an app that saves lives is the noblest. We knew we can contribute in saving lives by ensuring the fastest response of medical staff and volunteers (certified CPR/first aid volunteers)  to reach people in need. However, we soon realized that almost all of the Hajj technical problems can be solved by exploiting the shared problematic factor: data, that is associated with both space, and time: _SpatioTemporal data_.
+
+-----------------
+
+Initially, the team thinking was about tackling one domain, however, we questioned what if our customers are developers, architects targeting Hajj applications? Why not establish **HajjTech** solutions similar to what is happening with **FinTech**? What problems would Hajj technical solution providers face? and how can we streamline developers to provide Hajj/pilgrimage related services and technologies? Moreover, what if we provide a platform for all developers and architects to streamline the development process, and finally what if we enable them to be builders and architects?
+
+To demonstrate such a platform, we chose the medical use case "Alert, that is alert nearby help via targeted broadcasts", a PoC with the most impact. Saving lives by helping medical staff, especially for cardiac-arrest cases where response time is crucial. This will complement the official efforts by utilizing volunteers and spatiotemporal data in a sustainable way to reach persons in need within a target of 3 minutes.
+
+In addition, as a side effect of deploying such apps in the field, it will enable the collection of actionable data that can help in improving the notification and real-time tracking of app subjects (e.g. ambulances, scouts, volunteer doctors/nurses, certified CPR personnel).
+
+## What it does
+
+----
+
+It provides core data services to pilgrimage technologists, developers, and architects by building the core data engines and reusable APIs' by other hajj technologies and apps. A simple app builds on this platform could be as simple as below queries:
+
+ * Find me the quickest response medical assistance.
+ * Notify the authority of an emergency ( stampede, fire, cardiac arrest, ..etc)
+ * Which ATM is the busiest?
+ * Where best to have a mobile ATM machine?
+ * Find me a wheelchair
+ * Notify Authority of the need for a medical device e.g. AED Defibrillator.
+ * Find me nearest hospital
+ * Find me my Mina camp accommodation
+ * Find my best path to Haram?
+ * Notify my partner that I am lost to meet me.
+ * I need a translator
+
+Capitalizing on the fact that Hajj is one of the biggest world events constrained by time and space with huge spatiotemporal data from various resources (ambulances, emergency vehicles, scouts, medics,..etc)  and possible sensor now and in the future.
+
+## How we built it
+
+----
+
+Starting with an MVP as POC. 
+
+* **Docker** containers inside a **vagrant** box for **PHP** based API server using swagger.
+* **Swagger** is a powerful yet easy-to-use suite of API developer tools for teams and individuals, enabling development across the entire API lifecycle, from design and documentation, to test and deployment.
+* **firebase** for sign-in authentication and analytics.
+* **firestore** to store application data
+* example App **"LaaBas"** to provide effective medical assistance via utilizing nearby volunteers in addition to the official medical help provided by the Saudi government and Hajj organizations.
+
+## Challenges we ran into
+
+---
+
+It is challenging to break the currently established silos that govern most of Hajj data between transport, health, and hajj among over 100+ organizations.
+
+* Immediate access to actionable meaningful data.
+* How to deliver a POC in a short time
+* Lack of team experience with UI/UX
+* Fear of smartphone availability for all Hajj, at least we start with group leads was the solution.
+* Two original team members got logistics issues, One not receiving his flight reservation, other got sick and admitted to hospital days before the event
+
+## Accomplishments that we're proud of
+
+----
+
+
+*  A model to bring all teams closely together as well as Hajj organizations looking to enhance the Hajj user experience.
+
+* Strong team communications and spirit.
+* Learned several technologies and shared good feedback within the team or with other teams.
+* Breaking the Gunnies Book of Record for largest Hackathon along other fellow participants.
+
+## What we learned
+
+-----
+
+
+ * The importance of sustaining the solution commercially not just the human and charitable impact.
+ * Valuable feedback and insights from mentors, as well for neighbor team members **Dr. Hajj**
+ * The importance of pivoting and failing fast, we have gone probably through several discussions and iterations and tried to use technologies such as prototyping software and API servers. however, we had to put deadlines and time limits for our experimentation and chose alternative paths fast.
+
+ * The importance of getting something working out first to make an impact on people to understand what the platform is about.
+
+ * We also learned from mentors, other groups some positive feedback and criticism to some of our approaches.
+
+ * Learned the viability of some of  the modern managed cloud service technologies
+
+ * Repository security, by mistake, we enabled public access to our repo while it had our google cloud firebase keys.
+
+* Access to government or private organizations Hajj-related data, that motivated us, even more, to ensure we have a platform to enable collections of such crucial data.
+
+## What's next for M-019 HajiTech
+
+-----
+
+* Extend to other use Hajj cases and review the API for full coverage and ease of use and effectiveness.
+* Extend the functionality and its usage to other events and use cases e.g. 
+  *  Charity organizations to get notifications from refugees or vice verse. e.g. the Mediterranean
+  *  Large pilgrimage events around the world.
+  * Other emergency services ( fire brigade, police, traffic, ..etc)
+
+*  Enhance the user interactivity, due to non-Arabic language support, we have tried using Google Assistant actions using the English language to request medical assistance. We would like to extend this to the top 10 most used languages in Hajj and extend the use cases and interactions to provide hand free interactive manipulation of such apps when needed.
+
+* We started with the concept of trying to be easy to use language agnostic app, we would like to export more ideas in that regard.
